@@ -1,0 +1,1 @@
+echo "uid=mghazari,ou=2016_paris,ou=2016,ou=paris,ou=people,dc=42,dc=fr";

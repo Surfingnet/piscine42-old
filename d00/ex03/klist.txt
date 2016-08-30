@@ -1,0 +1,6 @@
+Credentials cache: API:D6C66541-102B-43A8-BB55-E96080D75E14
+        Principal: mghazari@42.FR
+
+  Issued                Expires               Principal
+Aug 29 19:27:12 2016  Sep  5 19:27:12 2016  krbtgt/42.FR@42.FR
+Aug 29 19:33:21 2016  Sep  5 19:27:12 2016  host/vgs-fn1.42.fr@42.FR
