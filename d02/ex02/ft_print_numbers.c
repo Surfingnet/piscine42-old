@@ -1,10 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/01 20:19:46 by mghazari          #+#    #+#             */
+/*   Updated: 2016/09/01 20:21:26 by mghazari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-void ft_print_alphabet(void)
+void	ft_print_alphabet(void)
 {
-  for (char c = '0' ; c <= '9' ; c++)
-  {
-    putchar (c);
-  }
-  return;
+	char c;
+
+	c = '0';
+	while (c <= '9')
+	{
+		putchar(c);
+		c++;
+	}
+	return ;
 }

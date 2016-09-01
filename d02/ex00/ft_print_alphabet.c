@@ -1,11 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/01 19:47:26 by mghazari          #+#    #+#             */
+/*   Updated: 2016/09/01 20:04:36 by mghazari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-void ft_print_alphabet(void)
+void	ft_print_alphabet(void)
+{
+	char c;
 
-  {
-    for (char c = 'a' ; c <= 'z' ; c++)
-    {
-      putchar (c);
-    }
-    return ;
-  }
+	c = 'a';
+	while (c <= 'z')
+	{
+		putchar(c);
+		c++;
+	}
+	return ;
+}

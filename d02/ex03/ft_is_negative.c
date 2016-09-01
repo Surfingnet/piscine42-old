@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_is_negative.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/09/01 20:23:27 by mghazari          #+#    #+#             */
+/*   Updated: 2016/09/01 20:24:54 by mghazari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 
-void ft_is_negative(int n)
+void	ft_is_negative(int n)
 {
-  if(n < 0)
-  {
-    putchar('N');
-  }
-  else
-  {
-    putchar('P');
-  }
-  return;
+	if (n < 0)
+	{
+		putchar('N');
+	}
+	else
+	{
+		putchar('P');
+	}
+	return ;
 }
