@@ -1,8 +1,5 @@
-dn:uid=mghazari,ou=2016_paris,ou=2016,ou=paris,ou=people,dc=42,dc=fr
+dn:uid=mghazari,ou=people,dc=42,dc=fr
 changetype: modify
-add: telephonenumber
-telephonenumber: 06-77-82-62-22
-add: pseudo
-pseudo: Surf
-add: steam
-steam: http://steamcommunity.com/id/surfingnet
+add: mobilephone
+mobilephone: 0677826222
+-
