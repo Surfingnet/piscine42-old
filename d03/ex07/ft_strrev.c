@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_div_mod.c                                       :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/02 00:36:36 by mghazari          #+#    #+#             */
-/*   Updated: 2016/09/02 05:56:00 by mghazari         ###   ########.fr       */
+/*   Created: 2016/09/02 05:12:02 by mghazari          #+#    #+#             */
+/*   Updated: 2016/09/02 05:57:42 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_div_mod(int a, int b, int *div, int *mod)
+char	*ft_strrev(char *str)
 {
-	*div = a / b;
-	*mod = a - b * (a / b);
-	return ;
+	int		len;
+	char	*rev;
+	int		i;
+
+	len = 0;
+	while (str[len] != '\0')
+	{
+		len++;
+	}
+	i = 0;
+	while (i < len)
+	{
+		rev[i] = str[len - i - 1];
+		i++;
+	}
+	return (*rev);
 }

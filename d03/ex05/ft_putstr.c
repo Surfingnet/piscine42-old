@@ -6,11 +6,15 @@
 /*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/02 02:08:11 by mghazari          #+#    #+#             */
-/*   Updated: 2016/09/02 03:34:21 by mghazari         ###   ########.fr       */
+/*   Updated: 2016/09/02 06:03:35 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+int		ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return (0);
+}
 
 void	ft_putstr(char *str)
 {
@@ -19,7 +23,7 @@ void	ft_putstr(char *str)
 	i = 0;
 	while (str[i] != '\0')
 	{
-		putchar(str[i]);
+		ft_putchar(str[i]);
 		i++;
 	}
 }
