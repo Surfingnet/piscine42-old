@@ -6,15 +6,11 @@
 /*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/02 02:08:11 by mghazari          #+#    #+#             */
-/*   Updated: 2016/09/02 06:03:35 by mghazari         ###   ########.fr       */
+/*   Updated: 2016/09/02 16:39:09 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c)
-{
-	write(1, &c, 1);
-	return (0);
-}
+int		ft_putchar(char c);
 
 void	ft_putstr(char *str)
 {
