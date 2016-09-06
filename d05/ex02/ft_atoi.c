@@ -6,17 +6,17 @@
 /*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/06 10:52:35 by mghazari          #+#    #+#             */
-/*   Updated: 2016/09/06 12:14:04 by mghazari         ###   ########.fr       */
+/*   Updated: 2016/09/06 18:40:05 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int		ft_atoi(char *str)
 {
-	int		stop;
-	int		i;
-	int		output;
-	int		sign;
-	char*	nbstr;
+	int	stop;
+	int	i;
+	int	output;
+	int	sign;
+	char*nbstr;
 
 	nbstr = "0123456789";
 	output = 0;
