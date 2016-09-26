@@ -26,7 +26,7 @@ int	*ft_range(int min, int max)
 	array_len = max - min;
 	if (array_len < 0)
 		return (NULL);
-	range = malloc(array_len * 4);
+	range = malloc(array_len * sizeof(int));
 	if (range == NULL)
 		return (NULL);
 	while (i < array_len)
