@@ -1,1 +1,1 @@
-ls -c -t | tr -s "\t" | tr "\n" ","
+ls -tF | tr '\r\n' ',' | sed 's/\(.*\),/\1/' | sed 's/*//g'
