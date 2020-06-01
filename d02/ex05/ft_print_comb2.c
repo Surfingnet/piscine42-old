@@ -1,27 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mghazari <maximeghazarian1@gmail.com>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/06/01 12:09:37 by mghazari          #+#    #+#             */
+/*   Updated: 2020/06/01 12:50:42 by mghazari         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 void ft_print_comb2(void)
 {
-  for(int i = 0; i < 100; i++)
-  {
-    char c1 = (i/10) + '0';
-    char c2 = (i-((i/10)*10)) + '0';
-    for(int y = 0; y < 100; y++)
-    {
-      char c3 = (y/10) + '0';
-      char c4 = (y-((y/10)*10)) + '0';
+	int i, m, c, d, u;
 
-      if(i != y)
-      {
-        putchar(c1);
-        putchar(c2);
-        putchar(' ');
-        putchar(c3);
-        putchar(c4);
-        if(i != 99 || y != 98)
-        {
-          putchar(',');
-          putchar(' ');
-        }
-      }
-    }
-  }
+	i = 1;
+	while (i < 9900)
+	{
+		m = (i / 1000);
+		c = ((i - (1000 * m)) / 100);
+		d = ((i - (1000 * m) - (100 * c)) / 10);
+		u = (i - (1000 * m) - (100 * c) - (d * 10));
+		if ((u + (10 * d)) > (c + (10 * m)))
+		{
+			ft_putchar (m + '0');
+			ft_putchar (c + '0');
+			ft_putchar (' ');
+			ft_putchar (d + '0');
+			ft_putchar (u + '0');
+			if (i < 9899)
+			{
+				ft_putchar(',');
+				ft_putchar(' ');
+			}
+		}
+		i++;
+	}
 }
