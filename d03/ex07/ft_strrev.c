@@ -3,29 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mghazari <maximeghazarian1@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/02 05:12:02 by mghazari          #+#    #+#             */
-/*   Updated: 2016/09/02 05:57:42 by mghazari         ###   ########.fr       */
+/*   Created: 2020/06/02 18:29:12 by mghazari          #+#    #+#             */
+/*   Updated: 2020/06/03 22:59:47 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 char	*ft_strrev(char *str)
 {
-	int		len;
-	char	*rev;
-	int		i;
+	int len, i;
+	char swap;
 
-	len = 0;
-	while (str[len] != '\0')
+	len = -1;
+	while (str[++len] != '\0');
+	if (len < 2)
+		return (str);
+	i = -1;
+	while (--len > ++i)
 	{
-		len++;
+		swap = str[len];
+		str[len] = str[i];
+		str[i] = swap;
 	}
-	i = 0;
-	while (i < len)
-	{
-		rev[i] = str[len - i - 1];
-		i++;
-	}
-	return (*rev);
+	return (str);
 }
+
