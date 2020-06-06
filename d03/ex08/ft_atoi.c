@@ -3,35 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mghazari <maximeghazarian1@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/02 06:21:15 by mghazari          #+#    #+#             */
-/*   Updated: 2016/09/02 06:56:16 by mghazari         ###   ########.fr       */
+/*   Created: 2020/06/06 14:12:12 by mghazari          #+#    #+#             */
+/*   Updated: 2020/06/06 15:08:04 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_atoi(char *str)
+int	ft_atoi(char *str)
 {
-	int	i;
-	int	res;
-	int	sign;
+	int i, negative, total;
 
-	if (str[0] == '-')
-	{
-		sign = -1;
-		i = 1;
-	}
-	else
-	{
-		sign = 1;
-		i = 0;
-	}
-	res = 0;
-	while (str[i] != '\0' && str[i] < 10 && str[i] >= 0)
-	{
-		res = res * 10 + str[i];
-		i++;
-	}
-	res = res * sign;
-	return (res);
+	i = -1;
+	total = 0;
+	negative = 0;
+	while ((str[++i] == ' ') || (str[i] == '\t') || (str[i] == '\n')
+		|| (str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'));
+	if (str[i] == 45 || str[i] == 43)
+		negative = (str[i++] == 45 ? 1 : 0);
+	while (str[i] >= 48 && str[i] <= 57)
+		total = total * 10 + (int)str[i++] - 48;
+	return (negative ? -total : total);
 }
+
