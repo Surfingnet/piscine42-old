@@ -6,11 +6,9 @@
 /*   By: mghazari <maximeghazarian1@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/09 10:24:34 by mghazari          #+#    #+#             */
-/*   Updated: 2020/06/09 10:45:52 by mghazari         ###   ########.fr       */
+/*   Updated: 2020/06/09 10:47:02 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <stdio.h>
 
 int	ft_recursive_factorial(int nb)
 {
