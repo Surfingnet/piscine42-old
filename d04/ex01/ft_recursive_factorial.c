@@ -3,22 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mghazari <maximeghazarian1@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/03 20:57:40 by mghazari          #+#    #+#             */
-/*   Updated: 2016/09/03 21:23:42 by mghazari         ###   ########.fr       */
+/*   Created: 2020/06/09 10:24:34 by mghazari          #+#    #+#             */
+/*   Updated: 2020/06/09 10:45:52 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 int	ft_recursive_factorial(int nb)
 {
 	if (nb < 0)
-	{
 		return (0);
-	}
-	if (nb < 2)
-	{
-		return (1);
-	}
-	return (nb * ft_recursive_factorial(nb - 1));
+	return  (nb < 2 ? 1 : nb * ft_recursive_factorial(nb - 1));
 }

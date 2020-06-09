@@ -3,25 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mghazari <maximeghazarian1@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/03 15:15:40 by mghazari          #+#    #+#             */
-/*   Updated: 2016/09/03 21:22:31 by mghazari         ###   ########.fr       */
+/*   Created: 2020/06/09 09:46:23 by mghazari          #+#    #+#             */
+/*   Updated: 2020/06/09 10:33:04 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_iterative_factorial(int nb)
 {
-	int res;
+	int f;
 
 	if (nb < 0)
-	{
 		return (0);
-	}
-	res = 1;
+	f = 1;
 	while (nb > 1)
-	{
-		res *= nb--;
-	}
-	return (res);
+		f *= nb--;
+	return (f);
 }
