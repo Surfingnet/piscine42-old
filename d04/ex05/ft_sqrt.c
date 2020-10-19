@@ -3,26 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mghazari <maximeghazarian1@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/03 22:04:41 by mghazari          #+#    #+#             */
-/*   Updated: 2016/09/03 22:25:09 by mghazari         ###   ########.fr       */
+/*   Created: 2020/10/19 18:29:45 by mghazari          #+#    #+#             */
+/*   Updated: 2020/10/19 18:53:24 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_sqrt(int nb)
+int ft_sqrt(int nb)
 {
-	int res;
-	int pow2;
+	int i;
 
-	if (nb < 1)
+	if (nb < 0)
 		return (0);
-	res = 1;
-	pow2 = 1;
-	while (pow2 < nb)
-	{
-		res++;
-		pow2 = res * res;
-	}
-	return (pow2 == nb ? res : 0);
+	for(i = 1; i <= nb / 2; i++)
+		if ((i * i) == (nb))
+			return (i);
+	return (0);
 }
