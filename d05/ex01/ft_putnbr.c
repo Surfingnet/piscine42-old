@@ -3,40 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mghazari <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mghazari <maximeghazarian1@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/05 11:01:02 by mghazari          #+#    #+#             */
-/*   Updated: 2016/09/06 18:09:51 by mghazari         ###   ########.fr       */
+/*   Created: 2020/10/20 08:40:41 by mghazari          #+#    #+#             */
+/*   Updated: 2020/10/20 10:14:38 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_putchar(char c);
+int	ft_putchar(char c);
 
 void	ft_putnbr(int nb)
 {
-	char	minus;
-	int		i;
-	int		cutter;
-	char	cookie;
+	int	tmp, size;
 
+	size = 1;
 	if (nb > 2147483647 || nb < -2147483648)
 		return ;
 	if (nb < 0)
 	{
 		nb *= -1;
-		minus = '\x002D';
-		ft_putchar(minus);
+		ft_putchar('\x002D');
 	}
-	cutter = 1;
-	while (nb / (cutter * 10) > 0)
-		cutter *= 10;
-	i = 1;
-	while (i)
+	tmp = nb;
+	while (tmp /= 10)
+		size *= 10;
+	tmp = nb;
+	while (size)
 	{
-		cookie = (nb / cutter) + '0';
-		ft_putchar(cookie);
-		nb -= (nb / cutter) * cutter;
-		i = cutter < 10 ? 0 : 1;
-		cutter /= 10;
+		ft_putchar((char)((tmp / size) + 48));
+		tmp %= size;
+		size /= 10;
 	}
+
 }
