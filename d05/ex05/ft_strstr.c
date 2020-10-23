@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mghazari <maximeghazarian1@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/20 13:29:50 by mghazari          #+#    #+#             */
-/*   Updated: 2020/10/20 13:42:26 by mghazari         ###   ########.fr       */
+/*   Created: 2020/10/22 11:30:48 by mghazari          #+#    #+#             */
+/*   Updated: 2020/10/22 12:37:48 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int i, negative, total;
+	int	to_find_len;
+	int	i;
+	int	offset;
 
+	to_find_len = -1;
+	while (to_find[++to_find_len])
+		continue;
+	if (!to_find_len)
+		return (str);
 	i = -1;
-	total = 0;
-	negative = 0;
-	while ((str[++i] == ' ') || (str[i] == '\t') || (str[i] == '\n')
-		|| (str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'));
-	if (str[i] == 45 || str[i] == 43)
-		negative = (str[i++] == 45 ? 1 : 0);
-	while (str[i] >= 48 && str[i] <= 57)
-		total = total * 10 + (int)str[i++] - 48;
-	return (negative ? -total : total);
+	while (str[++i])
+	{
+		offset = -1;
+		while (str[i + (++offset)] == to_find[offset])
+			if (offset == to_find_len - 1)
+				return (str + i);
+	}
+	return (NULL);
 }

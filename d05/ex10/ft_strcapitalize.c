@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mghazari <maximeghazarian1@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/20 13:29:50 by mghazari          #+#    #+#             */
-/*   Updated: 2020/10/20 13:42:26 by mghazari         ###   ########.fr       */
+/*   Created: 2020/10/23 12:11:33 by mghazari          #+#    #+#             */
+/*   Updated: 2020/10/23 13:23:12 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+char	*ft_strcapitalize(char *str)
 {
-	int i, negative, total;
+	int	i;
 
 	i = -1;
-	total = 0;
-	negative = 0;
-	while ((str[++i] == ' ') || (str[i] == '\t') || (str[i] == '\n')
-		|| (str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'));
-	if (str[i] == 45 || str[i] == 43)
-		negative = (str[i++] == 45 ? 1 : 0);
-	while (str[i] >= 48 && str[i] <= 57)
-		total = total * 10 + (int)str[i++] - 48;
-	return (negative ? -total : total);
+	while (str[++i])
+	{
+		if ((i == 0) && (str[i] >= 'a') && (str[i] <= 'z'))
+		{
+			str[i] -= 32;
+			continue;
+		}
+		if ((str[i] >= 'a') && (str[i] <= 'z'))
+			if (!((str[i - 1] >= 'a') && (str[i - 1] <= 'z')))
+				if (!((str[i - 1] >= 'A') &&
+(str[i - 1] <= 'Z')))
+					if (!((str[i - 1] >= '0') &&
+(str[i - 1] <= '9')))
+						str[i] -= 32;
+	}
+	return (str);
 }

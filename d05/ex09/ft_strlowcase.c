@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mghazari <maximeghazarian1@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/20 13:29:50 by mghazari          #+#    #+#             */
-/*   Updated: 2020/10/20 13:42:26 by mghazari         ###   ########.fr       */
+/*   Created: 2020/10/23 12:08:13 by mghazari          #+#    #+#             */
+/*   Updated: 2020/10/23 12:09:16 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+char	*ft_strlowcase(char *str)
 {
-	int i, negative, total;
+	int	i;
 
 	i = -1;
-	total = 0;
-	negative = 0;
-	while ((str[++i] == ' ') || (str[i] == '\t') || (str[i] == '\n')
-		|| (str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'));
-	if (str[i] == 45 || str[i] == 43)
-		negative = (str[i++] == 45 ? 1 : 0);
-	while (str[i] >= 48 && str[i] <= 57)
-		total = total * 10 + (int)str[i++] - 48;
-	return (negative ? -total : total);
+	while (str[++i])
+		if ((str[i] >= 'A') && (str[i] <= 'Z'))
+			str[i] = str[i + 32];
+	return (str);
 }

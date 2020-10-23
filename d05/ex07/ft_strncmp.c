@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mghazari <maximeghazarian1@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/20 13:29:50 by mghazari          #+#    #+#             */
-/*   Updated: 2020/10/20 13:42:26 by mghazari         ###   ########.fr       */
+/*   Created: 2020/10/23 11:51:02 by mghazari          #+#    #+#             */
+/*   Updated: 2020/10/23 11:56:09 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
-	int i, negative, total;
+	int	i;
 
 	i = -1;
-	total = 0;
-	negative = 0;
-	while ((str[++i] == ' ') || (str[i] == '\t') || (str[i] == '\n')
-		|| (str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'));
-	if (str[i] == 45 || str[i] == 43)
-		negative = (str[i++] == 45 ? 1 : 0);
-	while (str[i] >= 48 && str[i] <= 57)
-		total = total * 10 + (int)str[i++] - 48;
-	return (negative ? -total : total);
+	while ((s1[++i] || s2[i]) && i < n)
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+	return (0);
 }

@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mghazari <maximeghazarian1@gmail.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/20 13:29:50 by mghazari          #+#    #+#             */
-/*   Updated: 2020/10/20 13:42:26 by mghazari         ###   ########.fr       */
+/*   Created: 2020/10/21 10:36:11 by mghazari          #+#    #+#             */
+/*   Updated: 2020/10/21 19:34:25 by mghazari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(char *str)
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
 {
-	int i, negative, total;
+	int	i;
+	int	dest_len;
+	int	src_len;
 
+	dest_len = -1;
+	while (dest[++dest_len])
+		continue;
+	if (n > dest_len)
+		return ("");
+	src_len = -1;
+	while (src[++src_len])
+		continue;
 	i = -1;
-	total = 0;
-	negative = 0;
-	while ((str[++i] == ' ') || (str[i] == '\t') || (str[i] == '\n')
-		|| (str[i] == '\v') || (str[i] == '\f') || (str[i] == '\r'));
-	if (str[i] == 45 || str[i] == 43)
-		negative = (str[i++] == 45 ? 1 : 0);
-	while (str[i] >= 48 && str[i] <= 57)
-		total = total * 10 + (int)str[i++] - 48;
-	return (negative ? -total : total);
+	while (src[++i] && i < n)
+		dest[i] = src[i];
+	i--;
+	while (++i < dest_len)
+		dest[i] = '\0';
+	return (dest);
 }
